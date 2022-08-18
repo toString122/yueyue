@@ -406,11 +406,12 @@ public class YoloServiceController {
             return "wu";
         }
         Integer pointByKey = pointsManagementDaoImpl.getPointByKey(key);
-        if (pointByKey==null || pointByKey<=0){
-            return "wu";
+        if (pointByKey==-1){
+            return "meiyouyonghu";
         }
-
-
+        if (pointByKey<=0){
+            return "meijifen";
+        }
         if(configType.equals("1") && (word==null || word.equals(""))){
             return "cuo";
         }
